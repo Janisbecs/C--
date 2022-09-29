@@ -51,7 +51,7 @@ int main() {
 
     for (int i=0; i<k; i++){
         for (int j=0; j<2; j++){
-            numbers[i][j] = -50 + (rand() % 50); // izveidu random sarakstu (-50/+50)
+            numbers[i][j] = rand() % ((50) - (-50) + 1)+(-50); // izveidu random sarakstu (-50/+50)
         }
     }
 // 1 
@@ -94,7 +94,30 @@ int main() {
     cout<<"Lauztās līnijas kopējais garumms: "<<sum(attalumi, n)<< endl;
 
 //5 (katrā kvadrantā, jo nesapratu, ko nozīmē "uz asīīm")
-    
+    int pirm_kv=0, otr_kv=0, tres_kv=0, cet_kv=0, x_ass=0, y_ass=0  ;
+
+    for (int i=0; i<k; i++){
+        if(numbers[i][j]>0 && numbers[i][j+1]>0){
+            pirm_kv++;
+        } else if(numbers[i][j]<0 && numbers[i][j+1]>0){
+            otr_kv++;
+        }else if(numbers[i][j]<0 && numbers[i][j+1]<0){
+            tres_kv++;
+        }else if(numbers[i][j]>0 && numbers[i][j+1]<0){
+            cet_kv++;
+        }else if(numbers[i][j]==0){
+            x_ass++;
+        }else if(numbers[i][j+1]==0){
+            y_ass++;
+        }
+    int j=0;
+    }
+    cout<<"Pirmajā kvadrantā: "<< pirm_kv<< endl;
+    cout<<"Otrajā kvadrantā: "<< otr_kv<< endl;
+    cout<<"Trešajā kvadrantā: "<< tres_kv<< endl;
+    cout<<"Ceturtajā kvadrantā: "<< cet_kv<< endl;
+    cout<<"UZ x ass: "<< x_ass<< endl;
+    cout<<"Uz y ass: "<< y_ass<< endl;
 
     return 0; 
 }
