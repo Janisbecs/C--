@@ -91,7 +91,7 @@ int main() {
     cout<<"Visīsākā nogriežņa garums: "<<attalumi[small]<< endl;
 // 4
     int n = sizeof(attalumi) / sizeof(attalumi[0]);
-    cout<<"Lauztās līnijas kopējais garums: "<<sum(attalumi, n)<< endl;
+    cout<<"Lauztās līnijas kopējais garumss: "<<sum(attalumi, n)<< endl;
 
 //5 (katrā kvadrantā, jo nesapratu, ko nozīmē "uz asīm")
     
