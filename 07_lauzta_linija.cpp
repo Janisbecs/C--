@@ -93,7 +93,7 @@ int main() {
     int n = sizeof(attalumi) / sizeof(attalumi[0]);
     cout<<"Lauztās līnijas kopējais garumms: "<<sum(attalumi, n)<< endl;
 
-//5 (katrā kvadrantā, jo nesapratu, ko nozīmē "uz asīm")
+//5 (katrā kvadrantā, jo nesapratu, ko nozīmē "uz asīīm")
     
 
     return 0; 
