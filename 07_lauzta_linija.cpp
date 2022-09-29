@@ -14,6 +14,7 @@ failā rezult.txt:
 */
 #include <math.h>
 #include <iostream>
+#include <fstream>
 #include <ctime>
 #include <cstdlib>
 #include <bits/stdc++.h>
@@ -33,6 +34,7 @@ float sum(float arr[], int n)
 
 
 int main() {
+    ofstream MyFile("teksts/rezultati.txt");
     unsigned seed = time(0);
     srand(seed);
     int k=1;
@@ -40,7 +42,7 @@ int main() {
     cout << "---------------------------------------\n";
 
     while (nosacijums){
-        cout << "Cik punktus atliksiet koordinātu plaknē: ";
+        cout << "Cik punktus atliksiet koordinātu plaknē(2 līdz 50): ";
         cin >> k;
         if(2<=k && 50>=k){ // skaitļu intervāls
             nosacijums=false;
@@ -57,10 +59,13 @@ int main() {
 // 1 
     for (int i=0; i<k; i++){
         cout << i+1 <<". punkta koordinātes: ";
+        MyFile << i+1 <<". punkta koordinātes: ";
         for (int j=0; j<2; j++){
             cout <<numbers[i][j] << "  "; // izvada sarakstu
+            MyFile <<numbers[i][j] << "  ";
         }
     cout << endl;
+    MyFile <<endl;
     }
 //2 
     int j=0;
@@ -71,6 +76,7 @@ int main() {
             break;
         }
         cout<<"Distance starp "<<i+1<<". un "<<i+2<<". punktu: "<< distance(numbers[i][j], numbers[i][j+1], numbers[i+1][j], numbers[i+1][j+1])<< endl;
+        MyFile<<"Distance starp "<<i+1<<". un "<<i+2<<". punktu: "<< distance(numbers[i][j], numbers[i][j+1], numbers[i+1][j], numbers[i+1][j+1])<< endl;
         attalumi[i]=distance(numbers[i][j], numbers[i][j+1], numbers[i+1][j], numbers[i+1][j+1]);
     }
 //3 
@@ -82,6 +88,7 @@ int main() {
         }
     }
     cout<<"Visgarākā nogriežņa garums: "<<attalumi[big]<< endl;
+    MyFile<<"Visgarākā nogriežņa garums: "<<attalumi[big]<< endl;
     
     for (int i=0; i<k-1; i++){
         if(attalumi[i] <= attalumi[small]){
@@ -89,9 +96,11 @@ int main() {
         }
     }
     cout<<"Visīsākā nogriežņa garums: "<<attalumi[small]<< endl;
+    MyFile<<"Visīsākā nogriežņa garums: "<<attalumi[small]<< endl;
 // 4
     int n = sizeof(attalumi) / sizeof(attalumi[0]);
     cout<<"Lauztās līnijas kopējais garumms: "<<sum(attalumi, n)<< endl;
+    MyFile<<"Lauztās līnijas kopējais garumms: "<<sum(attalumi, n)<< endl;
 
 //5 (katrā kvadrantā, jo nesapratu, ko nozīmē "uz asīīm")
     int pirm_kv=0, otr_kv=0, tres_kv=0, cet_kv=0, x_ass=0, y_ass=0  ;
@@ -119,5 +128,12 @@ int main() {
     cout<<"UZ x ass: "<< x_ass<< endl;
     cout<<"Uz y ass: "<< y_ass<< endl;
 
+    MyFile<<"Pirmajā kvadrantā: "<< pirm_kv<< endl;
+    MyFile<<"Otrajā kvadrantā: "<< otr_kv<< endl;
+    MyFile<<"Trešajā kvadrantā: "<< tres_kv<< endl;
+    MyFile<<"Ceturtajā kvadrantā: "<< cet_kv<< endl;
+    MyFile<<"UZ x ass: "<< x_ass<< endl;
+    MyFile<<"Uz y ass: "<< y_ass<< endl;
+    MyFile.close();
     return 0; 
 }
