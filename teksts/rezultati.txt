@@ -1,14 +1,18 @@
-1. punkta koordinates: -42  -28  
-2. punkta koordinates: 0  -17  
-3. punkta koordinates: -1  -5  
-Distance starp 1. un 2. punktu: 43.4166
-Distance starp 2. un 3. punktu: 12.0416
-Visgarāka nogriezna garums: 43.4166
-Visīsākā nogriežņa garums: 12.0416
-Lauztās līnijas kopējais garumms: 55.4582
+1. punkta koordinates: -42  37  
+2. punkta koordinates: 15  -24  
+3. punkta koordinates: 8  -16  
+4. punkta koordinates: 36  -44  
+5. punkta koordinates: 0  -46  
+Distance starp 1. un 2. punktu: 83.4865
+Distance starp 2. un 3. punktu: 10.6301
+Distance starp 3. un 4. punktu: 39.598
+Distance starp 4. un 5. punktu: 36.0555
+Visgarāka nogriezna garums: 83.4865
+Visīsākā nogriežņa garums: 10.6301
+Lauztās līnijas kopējais garumms: 169.77
 Pirmajā kvadrantā: 0
-Otrajā kvadrantā: 0
-Trešajā kvadrantā: 2
-Ceturtajā kvadrantā: 0
+Otrajā kvadrantā: 1
+Trešajā kvadrantā: 0
+Ceturtajā kvadrantā: 3
 UZ x ass: 1
 Uz y ass: 0

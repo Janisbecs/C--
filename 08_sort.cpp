@@ -33,9 +33,6 @@ int main() {
     int a, b;
     cout << "---------------------------------------\n";
 
-    a = rand() % ((50) - (-50) + 1)+(-50); // izveidu random sarakstu (-50/+50)
-    b = rand() % ((50) - (-50) + 1)+(-50); // izveidu random sarakstu (-50/+50)
-    int numbers[a][b];
 }
 
 
