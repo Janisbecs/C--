@@ -1,108 +1,14 @@
-1. punkta koordinātes: 15  43  
-2. punkta koordinātes: -36  25  
-3. punkta koordinātes: 35  46  
-4. punkta koordinātes: -42  38  
-5. punkta koordinātes: 40  5  
-6. punkta koordinātes: 19  6  
-7. punkta koordinātes: -6  -25  
-8. punkta koordinātes: -40  -29  
-9. punkta koordinātes: 35  50  
-10. punkta koordinātes: 3  -3  
-11. punkta koordinātes: -1  0  
-12. punkta koordinātes: 18  -16  
-13. punkta koordinātes: -5  -38  
-14. punkta koordinātes: -12  -49  
-15. punkta koordinātes: -1  30  
-16. punkta koordinātes: 16  4  
-17. punkta koordinātes: 50  42  
-18. punkta koordinātes: -48  -31  
-19. punkta koordinātes: -12  44  
-20. punkta koordinātes: -22  38  
-21. punkta koordinātes: -43  37  
-22. punkta koordinātes: -35  -18  
-23. punkta koordinātes: -28  -46  
-24. punkta koordinātes: 10  46  
-25. punkta koordinātes: 29  28  
-26. punkta koordinātes: -44  -28  
-27. punkta koordinātes: -37  -27  
-28. punkta koordinātes: 11  -35  
-29. punkta koordinātes: -39  48  
-30. punkta koordinātes: -2  -13  
-31. punkta koordinātes: 12  -19  
-32. punkta koordinātes: 10  19  
-33. punkta koordinātes: 42  -44  
-34. punkta koordinātes: -40  19  
-35. punkta koordinātes: -20  30  
-36. punkta koordinātes: 24  -46  
-37. punkta koordinātes: -37  -8  
-38. punkta koordinātes: -3  -41  
-39. punkta koordinātes: 3  -3  
-40. punkta koordinātes: -34  16  
-41. punkta koordinātes: -14  25  
-42. punkta koordinātes: 32  8  
-43. punkta koordinātes: -41  -39  
-44. punkta koordinātes: -49  -44  
-45. punkta koordinātes: -41  46  
-46. punkta koordinātes: -33  12  
-47. punkta koordinātes: -33  0  
-48. punkta koordinātes: -15  -29  
-49. punkta koordinātes: -3  -8  
-50. punkta koordinātes: 37  -10  
-Distance starp 1. un 2. punktu: 54.0833
-Distance starp 2. un 3. punktu: 74.0405
-Distance starp 3. un 4. punktu: 77.4145
-Distance starp 4. un 5. punktu: 88.3912
-Distance starp 5. un 6. punktu: 21.0238
-Distance starp 6. un 7. punktu: 39.8246
-Distance starp 7. un 8. punktu: 34.2345
-Distance starp 8. un 9. punktu: 108.931
-Distance starp 9. un 10. punktu: 61.9112
-Distance starp 10. un 11. punktu: 5
-Distance starp 11. un 12. punktu: 24.8395
-Distance starp 12. un 13. punktu: 31.8277
-Distance starp 13. un 14. punktu: 13.0384
-Distance starp 14. un 15. punktu: 79.7621
-Distance starp 15. un 16. punktu: 31.0644
-Distance starp 16. un 17. punktu: 50.9902
-Distance starp 17. un 18. punktu: 122.201
-Distance starp 18. un 19. punktu: 83.1926
-Distance starp 19. un 20. punktu: 11.6619
-Distance starp 20. un 21. punktu: 21.0238
-Distance starp 21. un 22. punktu: 55.5788
-Distance starp 22. un 23. punktu: 28.8617
-Distance starp 23. un 24. punktu: 99.5389
-Distance starp 24. un 25. punktu: 26.1725
-Distance starp 25. un 26. punktu: 92.0054
-Distance starp 26. un 27. punktu: 7.07107
-Distance starp 27. un 28. punktu: 48.6621
-Distance starp 28. un 29. punktu: 96.8969
-Distance starp 29. un 30. punktu: 71.3442
-Distance starp 30. un 31. punktu: 15.2315
-Distance starp 31. un 32. punktu: 38.0526
-Distance starp 32. un 33. punktu: 70.6612
-Distance starp 33. un 34. punktu: 103.407
-Distance starp 34. un 35. punktu: 22.8254
-Distance starp 35. un 36. punktu: 87.818
-Distance starp 36. un 37. punktu: 71.8679
-Distance starp 37. un 38. punktu: 47.3814
-Distance starp 38. un 39. punktu: 38.4708
-Distance starp 39. un 40. punktu: 41.5933
-Distance starp 40. un 41. punktu: 21.9317
-Distance starp 41. un 42. punktu: 49.0408
-Distance starp 42. un 43. punktu: 86.8217
-Distance starp 43. un 44. punktu: 9.43398
-Distance starp 44. un 45. punktu: 90.3549
-Distance starp 45. un 46. punktu: 34.9285
-Distance starp 46. un 47. punktu: 12
-Distance starp 47. un 48. punktu: 34.1321
-Distance starp 48. un 49. punktu: 24.1868
-Distance starp 49. un 50. punktu: 40.05
-Visgarākā nogriežņa garums: 122.201
-Visīsākā nogriežņa garums: 5
-Lauztās līnijas kopējais garumms: 2500.78
-Pirmajā kvadrantā: 11
-Otrajā kvadrantā: 13
-Trešajā kvadrantā: 16
-Ceturtajā kvadrantā: 8
+1. punkta koordinātes: 26  -15  
+2. punkta koordinātes: 49  -32  
+3. punkta koordinātes: 11  13  
+Distance starp 1. un 2. punktu: 28.6007
+Distance starp 2. un 3. punktu: 58.8982
+Visgarākā nogriežņa garums: 58.8982
+Visīsākā nogriežņa garums: 28.6007
+Lauztās līnijas kopējais garumms: 87.4989
+Pirmajā kvadrantā: 1
+Otrajā kvadrantā: 0
+Trešajā kvadrantā: 0
+Ceturtajā kvadrantā: 2
 UZ x ass: 0
-Uz y ass: 2
+Uz y ass: 0
