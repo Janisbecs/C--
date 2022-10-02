@@ -58,8 +58,8 @@ int main() {
     }
 // 1 
     for (int i=0; i<k; i++){
-        cout << i+1 <<". punkta koordinātes: ";
-        MyFile << i+1 <<". punkta koordinātes: ";
+        cout << i+1 <<". punkta koordinates: ";
+        MyFile << i+1 <<". punkta koordinates: ";
         for (int j=0; j<2; j++){
             cout <<numbers[i][j] << "  "; // izvada sarakstu
             MyFile <<numbers[i][j] << "  ";
@@ -87,15 +87,15 @@ int main() {
             big = i;
         }
     }
-    cout<<"Visgarākā nogriežņa garums: "<<attalumi[big]<< endl;
-    MyFile<<"Visgarākā nogriežņa garums: "<<attalumi[big]<< endl;
+    cout<<"Visgaraka nogriezna garums: "<<attalumi[big]<< endl;
+    MyFile<<"Visgarāka nogriezna garums: "<<attalumi[big]<< endl;
     
     for (int i=0; i<k-1; i++){
         if(attalumi[i] <= attalumi[small]){
             small = i;
         }
     }
-    cout<<"Visīsākā nogriežņa garums: "<<attalumi[small]<< endl;
+    cout<<"Visisaka nogriezna garums: "<<attalumi[small]<< endl;
     MyFile<<"Visīsākā nogriežņa garums: "<<attalumi[small]<< endl;
 // 4
     int n = sizeof(attalumi) / sizeof(attalumi[0]);
