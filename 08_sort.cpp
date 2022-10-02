@@ -7,10 +7,10 @@ Masīvu nosaukt savā vārdā. Skaitļiem jābūt intervālā no no 1 līdz 500.
 2) Izvadīt uz ekrāna un ierakstīt failā sākotnējo skaitļu masīvu un zem tā sakārtoto masīvu 
 3) Izvadīt uz ekrāna un failā sakārtoto masīvu pretējā/otrādā secībā 
 4) Programmā realizēt kārtošanas izvēli, izmantojot sazarojumu (switch) 
-Katru kārtošanas algoritmu realizēt atsevišķā funkcijā 
-Uzdevumu realizēt ar 1 vienkāršo metodi (piem. burbuļa metodi), kas ir vienkārša no algortima viedokļa, bet neefektīva no
-ātrdarbības viedokļa un 
-pēc izvēles realizēt ar citu metodi, kas ir efektīva no ātrdarbības viedokļa (piem. merge, quicksort, shell vai citu) 
+5) Katru kārtošanas algoritmu realizēt atsevišķā funkcijā 
+    Uzdevumu realizēt ar 1 vienkāršo metodi (piem. burbuļa metodi), kas ir vienkārša no algortima viedokļa, bet neefektīva no
+    ātrdarbības viedokļa un 
+    pēc izvēles realizēt ar citu metodi, kas ir efektīva no ātrdarbības viedokļa (piem. merge, quicksort, shell vai citu) 
 Abos kārtošanas algoritmos nodrošināt salīdzināšanas reižu saskaitīšanu un mainīgo vērtību maiņu skaitu. Izvadīt šos rezultātus uz 
 ekrāna un failā 
 Pēc vēlēšanās varat papildināt programmu ar citām kārtošanas metodēm, katru savā funkcijā 
@@ -31,7 +31,7 @@ int main() {
     ofstream MyFile("teksts/kartosana.txt");
     unsigned seed = time(0);
     srand(seed);
-    int lenght = rand() % ((100) - (10) + 1)+(10), janis[lenght]; // min=10  max=100
+    int lenght = rand() % ((100) - (10) + 1)+(10), janis[lenght], izvele; // min=10  max=100
     cout << "---------------------------------------\n";
 
     for(int i=0; i<lenght; i++){
@@ -71,9 +71,22 @@ int main() {
         cout<< janis[i]<< ", ";
         MyFile << janis[i]<< ", ";
     }
-
-
-
+    cout<<endl;
+    MyFile <<endl;
+//4 
+    
+    cout << "Kadu sorting metodi izmantosiet(fasdf-1  ewfwnj-2): "; // Type a number and press enter
+    cin >> izvele; // Get user input from the keyboard
+    switch(izvele) {
+        case 1:
+            cout<<"IR";
+            break;
+        case 2:
+            // code block
+            break;
+        default:
+            cout<<"Ievadijat neatbisltošu skaitli";
+    }
 }
 
 
