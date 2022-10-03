@@ -15,7 +15,7 @@ Abos kārtošanas algoritmos nodrošināt salīdzināšanas reižu saskaitīšan
 ekrāna un failā 
 Pēc vēlēšanās varat papildināt programmu ar citām kārtošanas metodēm, katru savā funkcijā 
 Internetā meklējot informāciju par kārtošanas algoritmiem atlasīt vienu, kurā vislabāk būtu demonstrēts, parādīts vai kādā citādā
- ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārā. 
+ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārā. 
 */
 
 #include <math.h>
@@ -27,59 +27,77 @@ Internetā meklējot informāciju par kārtošanas algoritmiem atlasīt vienu, k
 using namespace std; 
 
 
+void printArray(int arr[], int size, ofstream &MyFile) {
+    int i;
+    for (i = 0; i < size; i++)
+        cout << arr[i] << ", ";
+        MyFile << arr[i]<< ", ";
+    cout << endl;
+    MyFile << endl;
+}
+
+void default_sort(int janis[], int n){
+    ofstream MyFile("teksts/kartosana.txt");
+    sort(janis, janis + n); // default sort
+    cout<<"Sakartots saraksts: ";
+    MyFile <<"Sakartots saraksts: ";
+    printArray(janis, n, MyFile); // izsauc funkciju, kas izvada sarakstu
+}
+
+void bubbleSort(int arr[], int n)
+{
+    int i, j;
+    for (i = 0; i < n - 1; i++)
+ 
+        // Last i elements are already
+        // in place
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1])
+                swap(arr[j], arr[j + 1]);
+}
+
+
 int main() {
     ofstream MyFile("teksts/kartosana.txt");
     unsigned seed = time(0);
     srand(seed);
-    int lenght = rand() % ((100) - (10) + 1)+(10), janis[lenght], izvele; // min=10  max=100
+    int lenght = rand() % ((30) - (10) + 1)+(10), janis[lenght], izvele; // min=10  max=30
     cout << "---------------------------------------\n";
 
     for(int i=0; i<lenght; i++){
         janis[i] = rand() % ((500) - (1) + 1)+(1);  //izveido sarakstu
     }
 
+    int n = sizeof(janis) / sizeof(janis[0]);
+
 //1, 2
     cout<<"Nesakartots saraksts: ";
     MyFile <<"Nesakartots saraksts: ";
+    printArray(janis, n, MyFile); // izsauc funkciju, kas izvada sarakstu
 
-    for(int i=0; i<lenght; i++){ // izvada nesakartotu sarakstu 
-        cout<< janis[i]<< ", ";
-        MyFile << janis[i]<< ", ";
-    }
-    cout<< endl;
-    MyFile << endl;
+    default_sort(janis, n); // izsauc funkciju, kurā ir default sort funkcija
 
-    int n = sizeof(janis) / sizeof(janis[0]);
-    sort(janis, janis + n); // default sort
+    // sort(janis, janis + n); // default sort
+    // cout<<"Sakartots saraksts: ";
+    // MyFile <<"Sakartots saraksts: ";
+    // printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
 
-    cout<<"Sakartots saraksts: ";
-    MyFile <<"Sakartots saraksts: ";
-
-    for(int i=0; i<lenght; i++){ // izvada sakartotu sarakstu 
-        cout<< janis[i]<< ", ";
-        MyFile << janis[i]<< ", ";
-    }
-    cout<<endl;
-    MyFile<<endl;
 //3 
-    sort(janis, janis + n, greater<int>());
+    sort(janis, janis + n, greater<int>()); // otrada seciba
 
     cout<<"Sakartots saraksts otrada seciba: ";
     MyFile <<"Sakartots saraksts otrada seciba: ";
 
-    for(int i=0; i<lenght; i++){ // izvada sakartotu sarakstu otrada seciba 
-        cout<< janis[i]<< ", ";
-        MyFile << janis[i]<< ", ";
-    }
-    cout<<endl;
-    MyFile <<endl;
+    printArray(janis, n, MyFile); // izsauc funkciju, kas izvada sarakstu
 //4 
     
-    cout << "Kadu sorting metodi izmantosiet(fasdf-1  ewfwnj-2): "; // Type a number and press enter
+    cout << "Kadu sorting metodi izmantosiet(1- bubble sort  ewfwnj-2): "; // Type a number and press enter
     cin >> izvele; // Get user input from the keyboard
     switch(izvele) {
         case 1:
-            cout<<"IR";
+            bubbleSort(janis, n);
+            cout << "Sorted array: \n";
+            printArray(janis, n, MyFile);
             break;
         case 2:
             // code block
