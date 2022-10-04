@@ -15,7 +15,7 @@ Abos kārtošanas algoritmos nodrošināt salīdzināšanas reižu saskaitīšan
 ekrāna un failā 
 Pēc vēlēšanās varat papildināt programmu ar citām kārtošanas metodēm, katru savā funkcijā 
 Internetā meklējot informāciju par kārtošanas algoritmiem atlasīt vienu, kurā vislabāk būtu demonstrēts, parādīts vai kādā citādā
-ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārāa. 
+ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārāaa. 
 */
 
 #include <math.h>
