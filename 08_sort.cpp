@@ -27,11 +27,12 @@ ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārāaaa.
 using namespace std; 
 
 
-void printArray(int arr[], int size, ofstream &MyFile) {
-    int i;
-    for (i = 0; i < size; i++)
+void printArray(int arr[], int size) {
+    ofstream MyFile("teksts/kartosana.txt");
+    for (int i = 0; i < size; i++){
         cout << arr[i] << ", ";
         MyFile << arr[i]<< ", ";
+    }
     cout << endl;
     MyFile << endl;
 }
@@ -41,11 +42,10 @@ void default_sort(int janis[], int n){
     sort(janis, janis + n); // default sort
     cout<<"Sakartots saraksts: ";
     MyFile <<"Sakartots saraksts: ";
-    printArray(janis, n, MyFile); // izsauc funkciju, kas izvada sarakstu
+    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
 }
 
-void bubbleSort(int arr[], int n)
-{
+void bubbleSort(int arr[], int n){
     int i, j;
     for (i = 0; i < n - 1; i++)
  
@@ -71,9 +71,9 @@ int main() {
     int n = sizeof(janis) / sizeof(janis[0]);
 
 //1, 2
-    cout<<"Nesakartots saraksts: ";
-    MyFile <<"Nesakartots saraksts: ";
-    printArray(janis, n, MyFile); // izsauc funkciju, kas izvada sarakstu
+    cout<<"Nesakartots sarakstss: ";
+    MyFile <<"Nesakartots sarakstss: ";
+    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
 
     default_sort(janis, n); // izsauc funkciju, kurā ir default sort funkcija
 
@@ -88,7 +88,7 @@ int main() {
     cout<<"Sakartots saraksts otrada seciba: ";
     MyFile <<"Sakartots saraksts otrada seciba: ";
 
-    printArray(janis, n, MyFile); // izsauc funkciju, kas izvada sarakstu
+    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
 //4 
     
     cout << "Kadu sorting metodi izmantosiet(1- bubble sort  ewfwnj-2): "; // Type a number and press enter
@@ -97,7 +97,7 @@ int main() {
         case 1:
             bubbleSort(janis, n);
             cout << "Sorted array: \n";
-            printArray(janis, n, MyFile);
+            printArray(janis, n);
             break;
         case 2:
             // code block
