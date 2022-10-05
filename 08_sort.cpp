@@ -27,63 +27,114 @@ ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārāaaa.
 using namespace std; 
 int quick_reizes = 0, marge_reizes = 0, bubble_reizes=0 ;
 
-int partition(int arr[], int start, int end)
-{
- 
-    int pivot = arr[start];
- 
-    int count = 0;
-    for (int i = start + 1; i <= end; i++) {
-        if (arr[i] <= pivot)
-            count++;
+int partition(int arr[], int start, int end);
+void quickSort(int arr[], int start, int end);
+void merge(int array[], int const left, int const mid, int const right);
+void mergeSort(int array[], int const begin, int const end);
+void printArray(int arr[], int size);
+void default_sort(int janis[], int n);
+void bubbleSort(int arr[], int n);
+
+int main() {
+    ofstream MyFile("teksts/kartosana.txt");
+    unsigned seed = time(0);
+    srand(seed);
+    int lenght = rand() % ((30) - (10) + 1)+(10), janis[lenght], janis_2[lenght], janis_3[lenght], janis_4[lenght], izvele; // min=10  max=30
+    cout << "---------------------------------------\n";
+
+    for(int i=0; i<lenght; i++){
+        janis[i] = rand() % ((500) - (1) + 1)+(1);  //izveido sarakstu
     }
- 
-    // Giving pivot element its correct position
-    int pivotIndex = start + count;
-    swap(arr[pivotIndex], arr[start]);
-    quick_reizes++;
- 
-    // Sorting left and right parts of the pivot element
-    int i = start, j = end;
- 
-    while (i < pivotIndex && j > pivotIndex) {
- 
-        while (arr[i] <= pivot) {
-            i++;
-        }
- 
-        while (arr[j] > pivot) {
-            j--;
-        }
- 
-        if (i < pivotIndex && j > pivotIndex) {
-            swap(arr[i++], arr[j--]);
-            quick_reizes++;
+
+    int n = sizeof(janis) / sizeof(janis[0]);
+
+    for(int i=0; i<lenght; i++){
+        janis_2[i] = janis[i];
+        janis_3[i] = janis[i];
+        janis_4[i] = janis[i];
+    }
+
+//1, 2
+    cout<<"Nesakartots sarakstss: ";
+    MyFile <<"Nesakartots sarakstss: ";
+    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
+    default_sort(janis, n); // izsauc funkciju, kurā ir default sort funkcija
+//3 
+    cout<<"Sakartots saraksts otrada seciba: ";
+    MyFile <<"Sakartots saraksts otrada seciba: ";
+    sort(janis, janis + n, greater<int>()); // otrada seciba
+    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
+//4 
+    while(true){
+        cout << "Kadu sorting metodi izmantosiet(1- bubble sort : 2-merge : 3-quick sort) ievadiet tikai ciparu: "; // Type a number and press enter
+        cin >> izvele; // Get user input from the keyboard
+
+        switch(izvele) {
+            case 1:
+                bubbleSort(janis_2, n);
+                cout << "Sakārtots saraksts ar "<< bubble_reizes<<" mainīgo maiņām pielietojot bubble sort metodi: ";
+                printArray(janis_2, n);
+                break;
+            case 2:
+                mergeSort(janis_3, 0, n - 1);
+                cout << "Sakārtots saraksts ar "<<marge_reizes <<" mainīgo maiņām pielietojot merge sort metodi: ";
+                printArray(janis_3, n);
+                break;
+            case 3: 
+                quickSort(janis_4, 0, n - 1);
+                cout << "Sakārtots saraksts ar "<< quick_reizes<<" mainīgo maiņām izmantojot quick sort metodi: ";
+                printArray(janis_4, n);
+                break;
+            default:
+                cout<<"Ievadijat neatbisltošu skaitli";
         }
     }
- 
-    return pivotIndex;
 }
+
+
+void printArray(int arr[], int size) {
+    ofstream MyFile("teksts/kartosana.txt");
+    for (int i = 0; i < size; i++){
+        cout << arr[i] << ", ";
+        MyFile << arr[i]<< ", ";
+    }
+    cout << endl;
+    MyFile << endl;
+}
+
+void default_sort(int janis[], int n){
+    ofstream MyFile("teksts/kartosana.txt");
+    sort(janis, janis + n); // default sort
+    cout<<"Sakartots saraksts: ";
+    MyFile <<"Sakartots saraksts: ";
+    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
+}
+
+void bubbleSort(int arr[], int n){
+    int i, j;
+    for (i = 0; i < n - 1; i++)
  
-void quickSort(int arr[], int start, int end)
+        // Last i elements are already
+        // in place
+        for (j = 0; j < n - i - 1; j++)
+            if (arr[j] > arr[j + 1]){
+                swap(arr[j], arr[j + 1]);
+                bubble_reizes++ ;
+            }
+}
+
+void mergeSort(int array[], int const begin, int const end)
 {
+    if (begin >= end)
+        return; // Returns recursively
  
-    // base case
-    if (start >= end)
-        return;
- 
-    // partitioning the array
-    int p = partition(arr, start, end);
- 
-    // Sorting the left part
-    quickSort(arr, start, p - 1);
- 
-    // Sorting the right part
-    quickSort(arr, p + 1, end);
+    auto mid = begin + (end - begin) / 2;
+    mergeSort(array, begin, mid);
+    mergeSort(array, mid + 1, end);
+    merge(array, begin, mid, end);
 }
- 
-void merge(int array[], int const left, int const mid,
-           int const right)
+
+void merge(int array[], int const left, int const mid, int const right)
 {
     auto const subArrayOne = mid - left + 1;
     auto const subArrayTwo = right - mid;
@@ -148,104 +199,59 @@ void merge(int array[], int const left, int const mid,
     delete[] leftArray;
     delete[] rightArray;
 }
- 
-void mergeSort(int array[], int const begin, int const end)
+
+void quickSort(int arr[], int start, int end)
 {
-    if (begin >= end)
-        return; // Returns recursively
  
-    auto mid = begin + (end - begin) / 2;
-    mergeSort(array, begin, mid);
-    mergeSort(array, mid + 1, end);
-    merge(array, begin, mid, end);
-}
-
-void printArray(int arr[], int size) {
-    ofstream MyFile("teksts/kartosana.txt");
-    for (int i = 0; i < size; i++){
-        cout << arr[i] << ", ";
-        MyFile << arr[i]<< ", ";
-    }
-    cout << endl;
-    MyFile << endl;
-}
-
-void default_sort(int janis[], int n){
-    ofstream MyFile("teksts/kartosana.txt");
-    sort(janis, janis + n); // default sort
-    cout<<"Sakartots saraksts: ";
-    MyFile <<"Sakartots saraksts: ";
-    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
-}
-
-void bubbleSort(int arr[], int n){
-    int i, j;
-    for (i = 0; i < n - 1; i++)
+    // base case
+    if (start >= end)
+        return;
  
-        // Last i elements are already
-        // in place
-        for (j = 0; j < n - i - 1; j++)
-            if (arr[j] > arr[j + 1]){
-                swap(arr[j], arr[j + 1]);
-                bubble_reizes++ ;
-            }
+    // partitioning the array
+    int p = partition(arr, start, end);
+ 
+    // Sorting the left part
+    quickSort(arr, start, p - 1);
+ 
+    // Sorting the right part
+    quickSort(arr, p + 1, end);
 }
 
-
-int main() {
-    ofstream MyFile("teksts/kartosana.txt");
-    unsigned seed = time(0);
-    srand(seed);
-    int lenght = rand() % ((30) - (10) + 1)+(10), janis[lenght], janis_2[lenght], janis_3[lenght], janis_4[lenght], izvele; // min=10  max=30
-    cout << "---------------------------------------\n";
-
-    for(int i=0; i<lenght; i++){
-        janis[i] = rand() % ((500) - (1) + 1)+(1);  //izveido sarakstu
+int partition(int arr[], int start, int end)
+{
+ 
+    int pivot = arr[start];
+ 
+    int count = 0;
+    for (int i = start + 1; i <= end; i++) {
+        if (arr[i] <= pivot)
+            count++;
     }
-
-    int n = sizeof(janis) / sizeof(janis[0]);
-
-    for(int i=0; i<lenght; i++){
-        janis_2[i] = janis[i];
-        janis_3[i] = janis[i];
-        janis_4[i] = janis[i];
+ 
+    // Giving pivot element its correct position
+    int pivotIndex = start + count;
+    swap(arr[pivotIndex], arr[start]);
+    quick_reizes++;
+ 
+    // Sorting left and right parts of the pivot element
+    int i = start, j = end;
+ 
+    while (i < pivotIndex && j > pivotIndex) {
+ 
+        while (arr[i] <= pivot) {
+            i++;
+        }
+ 
+        while (arr[j] > pivot) {
+            j--;
+        }
+ 
+        if (i < pivotIndex && j > pivotIndex) {
+            swap(arr[i++], arr[j--]);
+            quick_reizes++;
+        }
     }
-
-//1, 2
-    cout<<"Nesakartots sarakstss: ";
-    MyFile <<"Nesakartots sarakstss: ";
-    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
-    default_sort(janis, n); // izsauc funkciju, kurā ir default sort funkcija
-//3 
-    cout<<"Sakartots saraksts otrada seciba: ";
-    MyFile <<"Sakartots saraksts otrada seciba: ";
-    sort(janis, janis + n, greater<int>()); // otrada seciba
-    printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
-//4 
-    while(true){
-    cout << "Kadu sorting metodi izmantosiet(1- bubble sort : 2-merge : 3-quick sort) ievadiet tikai ciparu: "; // Type a number and press enter
-    cin >> izvele; // Get user input from the keyboard
-
-    switch(izvele) {
-        case 1:
-            bubbleSort(janis_2, n);
-            cout << "Sakārtots saraksts ar "<< bubble_reizes<<" mainīgo maiņām pielietojot bubble sort metodi: ";
-            printArray(janis_2, n);
-            break;
-        case 2:
-            mergeSort(janis_3, 0, n - 1);
-            cout << "Sakārtots saraksts ar "<<marge_reizes <<" mainīgo maiņām pielietojot merge sort metodi: ";
-            printArray(janis_3, n);
-            break;
-        case 3: 
-            quickSort(janis_4, 0, n - 1);
-            cout << "Sakārtots saraksts ar "<< quick_reizes<<" mainīgo maiņām izmantojot quick sort metodi: ";
-            printArray(janis_4, n);
-            break;
-        default:
-            cout<<"Ievadijat neatbisltošu skaitli";
-    }
-    }
+ 
+    return pivotIndex;
 }
-
-
+ 
