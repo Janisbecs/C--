@@ -26,7 +26,7 @@ ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārāaaa.
 #include <cstdlib>
 #include <bits/stdc++.h>
 using namespace std; 
-int quick_reizes = 0, marge_reizes = 0, bubble_reizes=0 ;
+int quick_reizes = 0, marge_reizes = 0, bubble_reizes=0;
 
 int partition(int arr[], int start, int end);
 void quickSort(int arr[], int start, int end);
@@ -36,8 +36,10 @@ void printArray(int arr[], int size);
 void default_sort(int janis[], int n);
 void bubbleSort(int arr[], int n);
 
+
 int main() {
-    ofstream MyFile("teksts/kartosana.txt");
+    ofstream izvade;
+    izvade.open("teksts/kartosana.txt",std::ios_base::app);
     unsigned seed = time(0);
     srand(seed);
     int lenght = rand() % ((30) - (10) + 1)+(10), janis[lenght], janis_2[lenght], janis_3[lenght], janis_4[lenght], izvele; // min=10  max=30
@@ -57,12 +59,12 @@ int main() {
 
 //1, 2
     cout<<"Nesakartots sarakstss: ";
-    MyFile <<"Nesakartots sarakstss: ";
+    izvade<<"Nesakartots saraksts: ";
     printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
     default_sort(janis, n); // izsauc funkciju, kurā ir default sort funkcija
 //3 
     cout<<"Sakartots saraksts otrada seciba: ";
-    MyFile <<"Sakartots saraksts otrada seciba: ";
+    izvade<<"Sakartots saraksts otrada seciba: ";
     sort(janis, janis + n, greater<int>()); // otrada seciba
     printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
 //4 
@@ -94,20 +96,22 @@ int main() {
 
 
 void printArray(int arr[], int size) {
-    ofstream MyFile("teksts/kartosana.txt");
+    ofstream izvade;
+    izvade.open("teksts/kartosana.txt", std::ios_base::app);
     for (int i = 0; i < size; i++){
         cout << arr[i] << ", ";
-        MyFile << arr[i]<< ", ";
+        izvade << arr[i]<< ", ";
     }
     cout << endl;
-    MyFile << endl;
+    izvade << endl;
 }
 
 void default_sort(int janis[], int n){
-    ofstream MyFile("teksts/kartosana.txt");
+    ofstream izvade;
+    izvade.open("teksts/kartosana.txt",std::ios_base::app);
     sort(janis, janis + n); // default sort
     cout<<"Sakartots saraksts: ";
-    MyFile <<"Sakartots saraksts: ";
+    izvade<<"Sakartots saraksts: ";
     printArray(janis, n); // izsauc funkciju, kas izvada sarakstu
 }
 
