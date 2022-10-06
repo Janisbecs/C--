@@ -17,11 +17,12 @@ Pēc vēlēšanās varat papildināt programmu ar citām kārtošanas metodēm, 
 Internetā meklējot informāciju par kārtošanas algoritmiem atlasīt vienu, kurā vislabāk būtu demonstrēts, parādīts vai kādā citādā
 ziņā noderīgs materiāls - iekopēt saiti programmas teksta komentārāaaa. 
 */
-
+#include <chrono>
 #include <math.h>
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include <sys/time.h>
 #include <cstdlib>
 #include <bits/stdc++.h>
 using namespace std; 
