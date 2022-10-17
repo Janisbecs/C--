@@ -1,4 +1,2 @@
-bubbleSort(janis, n);
-            cout << "Sorted array: \n";
-            printArray(janis, n, MyFile);
-            break;
+    // ofstream izvade;
+    // izvade.open("teksts/kartosana.txt");
